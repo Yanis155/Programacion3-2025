@@ -4,11 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use App\Models\Student;
-
-class Grant extends Model
+use App\Models\User;
+class Profile extends Model
 {
-    
     use HasFactory;
 
     protected $fillable = [
@@ -17,9 +15,7 @@ class Grant extends Model
         'fecha_inicial',
         'fecha_fin',
     ];
-    public function student(){
-        return $this->belongsTo(Student::class);
+    public function user(){
+        return $this->hasOne(User::class);
     }
-
-    
 }

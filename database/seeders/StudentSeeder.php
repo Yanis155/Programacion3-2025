@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Student;
 
-class studentTableSeeder extends Seeder
+class StudentSeeder extends Seeder
 {
     /**
      * Run the database seeds.
