@@ -16,7 +16,8 @@
     <button onclick="buscarUsuarios()">Enviar</button>
     
     <div id="resultado"></div>
-
+    <button id="guardarCambios" onclick="guardarUsuarios()"> Guardar usuarios</button>
+    
     <script>
 
         function buscarUsuarios() {
@@ -46,8 +47,26 @@
                 resultado.appendChild(div);
             });
         })
+        //Envio los datos al backend de laravel
+        function guardarUsuarios() {
             
+            fetch('guardarUsuarios',{
+            method:'POST',
+            headers: {
+                'Content-Type':'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+            },
+            body: JSON.stringify(data.results)
+                    })
+                    .then(response => response.json())
+                    .then(result => {
+                        console.log('Usuarios guardados:', result);
+                    })
+                    .catch(error => {
+                        console.error('Error al guardar:', error);
+                    });
         }
+    }
     </script> 
 </body>
 </html>

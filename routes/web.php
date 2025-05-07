@@ -13,3 +13,4 @@ Route::get('/buscar', function(){
 
 });
 Route::post('buscar', [ApiController::class, 'buscar'])->name('api.buscar');
+Route::post('guardarUsuarios',[ApiController::class, 'save']);
