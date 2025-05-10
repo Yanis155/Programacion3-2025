@@ -3,16 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Student;
 
-class StudentController extends Controller
+class ApiController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        
+        //
     }
 
     /**
@@ -36,7 +35,7 @@ class StudentController extends Controller
      */
     public function show(string $id)
     {
-        
+        //
     }
 
     /**
@@ -61,12 +60,5 @@ class StudentController extends Controller
     public function destroy(string $id)
     {
         //
-    }
-    public function buscar(Request $request){
-       
-        $student= Student::find($request-> id);
-         return view('/buscar');
-        
-        
     }
 }
